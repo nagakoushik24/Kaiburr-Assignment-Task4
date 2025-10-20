@@ -238,96 +238,11 @@ cd kaiburr-task-ui
 npm test
 ```
 
-### Integration Tests
-- Open `kaiburr-task-ui/test-connection.html` in browser
-- Open `kaiburr-task-ui/test-execution.html` in browser
-- Open `kaiburr-task-ui/test-delete.html` in browser
+## Screenshorts of Output
 
-## 🚨 Troubleshooting
+![Postman_GET_All_Tasks](1.png)
+![Postman_PUT_Create_Task](2.png) 
+![Postman_PUT_Execute_Task](3.png) 
+![MongoDB_Task_Collection](4.png) 
+![Terminal_Application_Run](5.png) 
 
-### Backend Issues
-
-**Memory Errors:**
-```bash
-# Use ultra-minimal settings
-.\run-backend-ultra-minimal.bat
-```
-
-**Port Already in Use:**
-```bash
-# Kill process on port 8080
-netstat -ano | findstr :8080
-taskkill /PID <PID> /F
-```
-
-**MongoDB Connection:**
-- Ensure MongoDB is running
-- Check connection string in `application.properties`
-
-### Frontend Issues
-
-**Connection Errors:**
-- Verify backend is running on port 8080
-- Check CORS configuration
-- Refresh page (Ctrl+F5)
-
-**Build Errors:**
-```bash
-# Clear cache and reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
-
-### Docker Issues
-
-**Build Failures:**
-- Check Dockerfile syntax
-- Ensure all files are in correct locations
-- Verify .dockerignore is working
-
-**Runtime Errors:**
-- Check container logs: `docker logs <container-id>`
-- Verify environment variables
-- Ensure MongoDB is accessible
-
-## 📊 Performance
-
-### Memory Optimization
-- Backend uses minimal memory settings (128MB max)
-- Docker image optimized with multi-stage build
-- Frontend uses Vite for fast builds
-
-### Caching
-- Maven dependencies cached in CI/CD
-- Docker layers cached for faster builds
-- Browser caching for static assets
-
-## 🔒 Security
-
-- Non-root user in Docker container
-- Command validation to prevent injection
-- CORS properly configured
-- Secrets managed through GitHub Actions
-
-## 📝 License
-
-This project is part of the Kaiburr assignment and is for educational purposes.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📞 Support
-
-For issues and questions:
-1. Check the troubleshooting section
-2. Review GitHub Issues
-3. Check the logs for error details
-
----
-
-**Happy Coding! 🚀**
